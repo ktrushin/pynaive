@@ -1,0 +1,6 @@
+[flake8]
+ignore =
+    D401,
+    D413
+exclude =
+    __pycache__

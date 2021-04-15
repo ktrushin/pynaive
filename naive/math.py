@@ -1,6 +1,7 @@
 """A module with a simple function."""
 from typing import Sequence
 
+
 class EmptyListError(Exception):
     """Thrown in the `average` function when an empty iterable is detected."""
 
