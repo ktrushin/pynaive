@@ -40,4 +40,5 @@ def test_average_int_args_yield_same_result_as_floats():
 
 
 def test_average_no_difference_between_list_and_tuple():
-    assert average([-17.125, -3.75, 5.0, 75.125]) == average((-17.125, -3.75, 5.0, 75.125))
+    assert average([-17.125, -3.75, 5.0, 75.125]) \
+        == average((-17.125, -3.75, 5.0, 75.125))

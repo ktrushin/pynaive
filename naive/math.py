@@ -1,4 +1,6 @@
 """A module with a simple function."""
+
+
 from typing import Sequence
 
 
