@@ -3,7 +3,7 @@ from typing import Sequence
 
 class EmptyListError(Exception):
     """Thrown in the `average` function when an empty iterable is detected."""
-    pass
+
 
 def average(numbers: Sequence[float]) -> float:
     """Computes average value of a list of numbers.

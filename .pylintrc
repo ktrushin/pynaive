@@ -1,0 +1,8 @@
+[MASTER]
+jobs=0
+
+[MESSAGES CONTROL]
+enable=all
+
+[BASIC]
+good-names=i,e,k,n,v

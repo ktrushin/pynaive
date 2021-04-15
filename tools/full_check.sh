@@ -8,4 +8,5 @@ if [ ! -d ".git" ]; then
   exit 1
 fi
 
+python3 -m pylint naive
 python3 -m pytest
