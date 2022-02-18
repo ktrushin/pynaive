@@ -11,14 +11,9 @@ class EmptyListError(Exception):
 def average(numbers: Sequence[float]) -> float:
     """Computes average value of a list of numbers.
 
-    Args:
-        numbers: a list of numbers
-
-    Returns:
-        average value of the specified list of numbers
-
-    Raises:
-        EmptyListError if the list is empty
+    :param: numbers: a list of numbers
+    :returns: average value of the specified list of numbers
+    :raises: EmptyListError if the list is empty
     """
     total = 0.0
     count = 0
