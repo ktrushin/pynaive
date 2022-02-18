@@ -17,6 +17,7 @@ def average(numbers: Sequence[float]) -> float:
     """
     total = 0.0
     count = 0
+    # pylint: disable=invalid-name
     for n in numbers:
         count += 1
         total += n

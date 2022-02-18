@@ -5,4 +5,4 @@ jobs=0
 enable=all
 
 [BASIC]
-good-names=i,e,k,n,v
+good-names=i,e,k,v
