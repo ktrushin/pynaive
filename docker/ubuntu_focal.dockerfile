@@ -33,9 +33,9 @@ ENV LANG=$locale LC_ALL=$locale
 
 # Install the packages for Python development and convenient command line usage
 RUN apt-get update && apt-get install --yes --no-install-recommends \
-        sudo lsb-release software-properties-common tzdata bash-completion \
-        coreutils less tree tmux vim gnupg2 ca-certificates ack git-core \
-        man-db manpages manpages-dev \
+        sudo lsb-release bash-completion coreutils tree less vim ack jq \
+        curl wget git-core gnupg2 ca-certificates  \
+        man-db manpages manpages-dev manpages-posix manpages-posix-dev \
         python3 python3-setuptools python3-pip python3-wheel twine \
         flake8 python3-flake8-docstrings python3-pytest-flake8 \
         mypy mypy-doc pylint pylint-doc python3-pytest \

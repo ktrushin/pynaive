@@ -57,7 +57,7 @@ fi
 proj_name=$(basename $(pwd))
 image_name=$proj_name
 image_tag=$distrib_codename
-container_name="${image_name}_${image_tag}"
+container_name="${image_name}-${image_tag}"
 
 ############ CREATE DOCKER IMAGE AND CONTAINER IF THEY DO NOT EXIST ############
 if [ -z "$(docker image ls -q $image_name:$image_tag)" ]; then
@@ -70,7 +70,7 @@ fi
 
 if [ -z "$(docker container ls -aq --filter name=$container_name)" ]; then
   docker container create \
-    --privileged -it \
+    --privileged -it --cap-add=SYS_PTRACE \
     --name=$container_name --hostname=$container_name \
     --user=$LOGNAME \
     -v $HOME:$HOME -v $(pwd):/$proj_name -w /$proj_name \
