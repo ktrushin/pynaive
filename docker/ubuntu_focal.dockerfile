@@ -27,8 +27,8 @@ ENV LOGNAME=$username USER=$username
 RUN apt-get update && apt-get install --yes --no-install-recommends apt-utils
 
 # Set the locale
-RUN apt-get update && apt-get install --yes --no-install-recommends locales
-RUN locale-gen $locale && update-locale LANG=$locale LC_CTYPE=$locale
+RUN apt-get update && apt-get install --yes --no-install-recommends locales && \
+    locale-gen $locale && update-locale LANG=$locale LC_CTYPE=$locale
 ENV LANG=$locale LC_ALL=$locale
 
 # Install the packages for Python development and convenient command line usage

@@ -70,11 +70,10 @@ fi
 
 if [ -z "$(docker container ls -aq --filter name=$container_name)" ]; then
   docker container create \
-    --privileged -it --cap-add=SYS_PTRACE \
-    --name=$container_name --hostname=$container_name \
-    --user=$LOGNAME \
-    -v $HOME:$HOME -v $(pwd):/$proj_name -w /$proj_name \
-    $image_name:$image_tag /bin/bash
+    --tty --interactive --privileged --cap-add=SYS_PTRACE \
+    --name=$container_name --hostname=$container_name --user=$LOGNAME \
+    --volume=$HOME:$HOME --workdir=$(pwd) \
+    $image_name:$image_tag
 fi
 
 ########## START DOCKER CONTAINER AND EXECUTE BASH INTERACTIVELY THERE #########
