@@ -38,7 +38,7 @@ container> twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 container> twine upload dist/*
 ```
 
-## Instanllation
+## Installation
 In order to install the project in the editable mode without creating a
 binary distribution and uploading it to the PyPI, execute the following:
 ```shell
