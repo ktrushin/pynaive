@@ -1,14 +1,17 @@
 # pynaive
 A toy project to demonstrate Python development environment and toolchain.
 
-The script `tools/docker.sh` creates, runs and executes a docker container for
-developing the project. The script `tools/full_check.sh` runs style checkes,
-linters and tests. The project can be built with
-`python3 setup.py sdist bdist_wheel` command.
+Set up the [development invironment](https://github.com/ktrushin/ganvigar)
+```shell
+host> git clone git@github.com:ktrushin/ganvigar.git
+host> git clone git@github.com:ktrushin/pynaive.git
+host> cd pynaive
+host> ../ganvigar/devenv-launch ganvigar/dev.conf
+container>
 ```
-host> cd <project_root_dir>
-host> ./tools/docker.sh
-pynaive_focal
+
+Run style checkes, linters and tests
+```shell
 container> ./tools/full_check.sh
 Success: no issues found in 2 source files
 
@@ -24,6 +27,10 @@ collected 7 items
 tests/test_math.py .......                                       [100%]
 
 ======================= 7 passed in 0.03 seconds =======================
+```
+
+Prepare binary distribution and upload to PyPI
+```shell
 container> python3 setup.py sdist bdist_wheel
 <lots_of_output_here>
 container> twine check dist/*
@@ -32,9 +39,14 @@ container> twine upload dist/*
 ```
 
 ## Instanllation
-Exectute the following in the command line:
+In order to install the project in the editable mode without creating a
+binary distribution and uploading it to the PyPI, execute the following:
+```shell
+$ pip3 install -e /path/to/the/top/dir/of/pynaive/where/setup.py/is/located
 ```
-shell> pip3 install pynaive
+Install the previously prepared binary distribution from the PyPI:
+```shell
+$ pip3 install pynaive
 ```
 
 ## Example
